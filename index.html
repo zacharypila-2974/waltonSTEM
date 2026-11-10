@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Walton STEM Academy</title>
+<style>
+:root{
+  color-scheme:light; --bg:#ffffff; --text:#1a1a1a; --muted:#5f5f5f; --line:#dcdcdc; --ph:#ececec; --link:#1a1a1a;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  --serif:Georgia,"Times New Roman",serif; --sans:-apple-system,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:1.0625rem;line-height:1.65}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.narrow{max-width:680px}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:16px 0 14px;padding-top:calc(16px + env(safe-area-inset-top,0px))}
+header .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px 32px}
+.site-name{font-family:var(--serif);font-size:1.25rem;text-decoration:none}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 24px;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--text);text-decoration:underline}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.2;margin:0}
+h1{font-size:clamp(2.2rem,5.5vw,3.75rem);margin-bottom:20px}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:20px}
+h3{font-size:1.25rem;margin-bottom:6px}
+p{margin:0 0 1em;max-width:68ch}
+section{padding:56px 0}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-start;padding:0}
+.hero-media{position:absolute;inset:0;background:var(--ph);overflow:hidden}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+
+.hero-content{position:relative;z-index:2;width:100%}
+.scroll{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border:1px solid var(--text);border-radius:50%;background:var(--bg);color:var(--text)}
+.scroll svg{width:22px;height:22px;animation:nudge 2.4s ease-in-out infinite}
+@keyframes nudge{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(5px)}}
+.photo{width:100%;background:var(--ph);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:.9rem;padding:24px;margin:0}
+.photo.wide{aspect-ratio:16/8}
+.photo.half{aspect-ratio:4/3}
+figure{margin:0}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:8px}
+.actions{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:8px;align-items:center}
+.button{display:inline-block;padding:12px 22px;border:1px solid var(--text);text-decoration:none;color:var(--text)}
+.button:hover{background:var(--text);color:var(--bg)}
+.pathways{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 48px;margin-top:32px}
+.pathways p{color:var(--muted);margin:0}
+dl.dates{margin:0;max-width:680px}
+dl.dates div{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 24px;padding:14px 0;border-top:1px solid var(--line)}
+dl.dates div:last-child{border-bottom:1px solid var(--line)}
+dl.dates dt{margin:0}
+dl.dates dd{margin:0;color:var(--muted)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:32px 0}
+.mission{border-top:1px solid var(--line)}
+ul.purpose{padding-left:1.2em;max-width:68ch}
+ul.purpose li{margin-bottom:.6em}
+footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--muted);font-size:.95rem}
+footer .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+footer p{margin:0 0 .4em}
+@media (max-width:720px){
+  .pathways,.pair,footer .wrap{grid-template-columns:1fr}
+  .photo.wide{aspect-ratio:4/3}
+  section{padding:40px 0}
+}
+.hero .button:not(:hover){background:var(--bg)}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:40px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scroll svg{animation:none}}
+.hero-bottom{position:absolute;left:0;right:0;bottom:28px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:16px}
+.hero h1{font-family:var(--sans);font-weight:800;font-size:clamp(2.75rem,7.5vw,6rem);line-height:1;letter-spacing:-.02em;color:#000;margin:0 0 12px}
+.hero .slogan{font-family:var(--sans);font-weight:700;font-size:clamp(1.25rem,3.2vw,2.25rem);line-height:1.2;color:#000;margin:0;max-width:none}
+.lede{font-family:var(--serif);font-size:1.4rem;line-height:1.55}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="site-name" href="#top">Walton STEM Academy</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="https://www.waltonstem.com/gallery">Information</a></li>
+        <li><a href="https://www.waltonstem.com/pathways">Pathways</a></li>
+        <li><a href="https://www.waltonstem.com/application">Application</a></li>
+        <li><a href="https://www.waltonstem.com/summer-camp">Summer camp</a></li>
+        <li><a href="https://www.waltonstem.com/student-life">Student life</a></li>
+        <li><a href="https://www.waltonstem.com/our-faculty">Our faculty</a></li>
+        <li><a href="https://www.waltonstem.com/fundraising">Parent patrons</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-media">
+    <img src="assets/hero.jpg" alt="The front entrance of Walton High School" width="2000" height="1333">
+  </div>
+  <div class="hero-bottom">
+    <a class="button" href="https://form.jotform.com/213066423447150">Apply to the STEM Academy</a>
+    <a class="scroll" href="#about" aria-label="Scroll down to the page content">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg>
+  </a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="narrow">
+      <p class="lede">Walton STEM Academy is a four-year program at Walton High School in Marietta, Georgia. Students build their curiosity in science, technology, engineering, and math, and the confidence to use it.</p>
+      <p><a href="https://www.waltonstem.com/_files/ugd/6898b7_73a2e50c67af4ed8b75c0d762fb95ae8.docx?dn=Walton%20STEM%20Academy%20brochure%2026-27.docx">Download the 2026–2027 brochure</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>A new Computer Science pathway</h2>
+    <div class="narrow">
+      <p>Beginning with the next STEM cohort, students can explore computing through a rigorous four-year sequence that builds skills in computational thinking, programming, problem-solving, cybersecurity, and emerging technologies.</p>
+      <p>The pathway is designed for students who are curious about technology and enjoy figuring out how things work. No prior programming experience is required, only curiosity, persistence, and a willingness to learn.</p>
+    </div>
+    <h3 style="margin-top:48px">Four pathways</h3>
+    <div class="pathways">
+      <div><h3>Advanced Mathematics and Science</h3><p>Description to come from the Pathways page.</p></div>
+      <div><h3>Biomedical Sciences</h3><p>Description to come from the Pathways page.</p></div>
+      <div><h3>Engineering</h3><p>Description to come from the Pathways page.</p></div>
+      <div><h3>Computer Science</h3><p>Description to come from the Pathways page.</p></div>
+    </div>
+    <p style="margin-top:32px"><a href="https://www.waltonstem.com/pathways">Read about each pathway</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Application timeline</h2>
+    <dl class="dates">
+      <div><dt>Applications due to Walton High School</dt><dd>December 18, 2026</dd></div>
+      <div><dt>Students outside CCSD submit report cards</dt><dd>January 8, 2027</dd></div>
+      <div><dt>Admission decisions mailed to applicants</dt><dd>February 5, 2027</dd></div>
+      <div><dt>FAQ Night, 5:30–6:30 p.m.</dt><dd>February 25, 2027</dd></div>
+      <div><dt>Intent letters due from accepted students</dt><dd>March 1, 2027</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Recent student work</h2>
+    <figure>
+      <div class="photo wide" role="img" aria-label="Placeholder for a photo of the RoboLympics competition">Large photo: RoboLympics, Bot-Bot Golf course at Walton</div>
+      <figcaption>Sophomore Engineering students competing in RoboLympics.</figcaption>
+    </figure>
+    <div class="narrow" style="margin-top:32px">
+      <h3>RoboLympics</h3>
+      <p>This October, the Sophomore Engineering Class of 2028 competed in RoboLympics. In a series of events, teams designed robots to meet specific requirements using input and output sensors and their VEX kits. The events ended with Bot-Bot Golf, where the robots played a five-hole course throughout Walton.</p>
+      <p>Congratulations to Mason, Ryan G., Thad, and Samuel, whose robot posted a low score of 33.</p>
+    </div>
+    <div class="pair">
+      <figure>
+        <div class="photo half" role="img" aria-label="Placeholder photo">Photo: Welcome, Freshman Class of 2029</div>
+        <figcaption>Welcome, Freshman Class of 2029</figcaption>
+      </figure>
+      <figure>
+        <div class="photo half" role="img" aria-label="Placeholder photo">Photo: Tremont field trip</div>
+        <figcaption>Tremont field trip</figcaption>
+      </figure>
+    </div>
+    <p><a href="https://www.waltonstem.com/student-life">More from student life</a></p>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="wrap">
+    <h2>Our mission</h2>
+    <div class="narrow">
+      <p>To foster student curiosity in science, technology, math, and engineering, to cultivate joy in learning, and to build the confidence to engage as ethical leaders capable of addressing the world’s most significant issues.</p>
+    </div>
+    <h3 style="margin-top:40px;margin-bottom:12px">Statements of purpose</h3>
+    <ul class="purpose">
+      <li>Develop the interpersonal, communication, research, and technical skills needed to compete in a changing global society.</li>
+      <li>Establish high academic, social, and ethical expectations.</li>
+      <li>Foster mastery of both knowledge and skills through innovative resources and authentic experiences.</li>
+      <li>Collaborate and cooperate locally and globally within the STEM community.</li>
+      <li>Build partnerships with community stakeholders that strengthen the program and enhance students’ lives.</li>
+    </ul>
+    <p style="margin-top:24px"><a href="https://www.waltonstem.com/_files/ugd/0fb1e1_d3c9dbbe9aac4747ae3cc83398e2e716.pdf">Code of conduct</a> &nbsp;&nbsp; <a href="https://tinyurl.com/29mtsne5">Student handbook</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p>Walton High School STEM Academy</p>
+      <p>1590 Bill Murdock Rd.<br>Marietta, GA 30062</p>
+    </div>
+    <div>
+      <p>770-578-3225</p>
+      <p><a href="mailto:tina.link@cobbk12.org">tina.link@cobbk12.org</a></p>
+    </div>
+    <div>
+      <p><a href="https://instagram.com/Walton.STEM">Instagram</a></p>
+      <p><a href="http://www.twitter.com/waltonSTEM">Twitter</a></p>
+      <p><a href="https://www.waltonhighschoolfoundation.org/stem-academy.html">Donate</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
